@@ -13,8 +13,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.ComponentScan;
 
 @Slf4j
-@SpringBootApplication(scanBasePackages ={ "com.vish.jpa_demo"}, exclude = {DataSourceAutoConfiguration.class })
-//@SpringBootApplication
+@SpringBootApplication
 public class JpaDemoApplication
 {
 
@@ -23,7 +22,7 @@ public class JpaDemoApplication
 		log.info("Starting Main");
 		SpringApplication.run(JpaDemoApplication.class, args);
 
-		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(JpaDemoApplication.class);
 
 		Student s = new Student("Vish");
 		Laptop laptop = new Laptop("HP");

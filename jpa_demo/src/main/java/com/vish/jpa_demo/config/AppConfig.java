@@ -21,7 +21,7 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @EnableTransactionManagement
-@SpringBootConfiguration
+@Configuration
 public class AppConfig
 {
     @Autowired
@@ -45,9 +45,11 @@ public class AppConfig
         final HikariDataSource dataSource = new HikariDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/test");
-        //dataSource.setUsername("XXX");
-        //dataSource.setPassword("XXXX");
+        dataSource.setUsername("XXXX");
+        dataSource.setPassword("XXXX");
         dataSource.setAutoCommit(false);
+        //dataSource.setMinEvictableIdleTimeMillis(1000);
+        //dataSource.setCacheState(false);s
         dataSource.setConnectionTimeout(31000);
         dataSource.setIdleTimeout(30000);
         dataSource.setMaximumPoolSize(2);
